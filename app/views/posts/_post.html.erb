@@ -1,8 +1,12 @@
 <%= post %>
-  <h1><%= link_to post.title.capitalize, post %></h1>
+<h1><%= link_to post.title.capitalize, post %></h1>
 
-  <hr>
-  <p><span class="glyphicon glyphicon-time"></span> <%= post.posted_on %></p>
-  <hr>
+<hr>
+<p><span class="glyphicon glyphicon-time"></span> <%= post.posted_on %></p>
+<hr>
 
-  <%= post.body %>
+<%= post.body %>
+
+<div class="tags">
+  <%= render post.tags %>
+</div>
