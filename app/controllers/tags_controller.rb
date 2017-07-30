@@ -4,4 +4,10 @@ class TagsController < ApplicationController
     @posts= tag ? tag.posts : Post.all
     render 'post/index'
   end
+
+  def cloud
+    @tags= Tag.select('name as text, count(*) as weight')
+              .joins(:posts)
+              .group(:name)
+  end
 end
